@@ -14,7 +14,7 @@ RUN true \
   && chmod +x /gost /entrypoint.sh
 
 HEALTHCHECK --interval=90s --timeout=15s --retries=2 --start-period=120s \
-	CMD curl 'http://edge.microsoft.com/captiveportal/generate_204' --interface wg0 || exit 1
+	CMD curl -fsL 'http://edge.microsoft.com/captiveportal/generate_204' --interface wg0
 
 EXPOSE 1080
 ENTRYPOINT [ "/entrypoint.sh" ]
