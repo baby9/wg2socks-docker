@@ -8,7 +8,6 @@ docker run -d \
     --restart=unless-stopped \
     --name=wg2socks \
     --privileged \
-    --cap-add NET_ADMIN \
     -v /path/to/your/wg.conf:/wg0.conf:ro \
     -p 1080:1080 \
     zenexas/wireguard-client-socks
