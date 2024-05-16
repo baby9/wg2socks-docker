@@ -4,7 +4,7 @@
 FROM alpine
 
 RUN true && \
-    apk add --no-cache wireguard-tools openresolv ip6tables curl && \
+    apk add --no-cache wireguard-tools openresolv iproute2 iptables ip6tables curl && \
     wget https://github.com/go-gost/gost/releases/download/v3.0.0-rc10/gost_3.0.0-rc10_linux_amd64.tar.gz -O /root/gost.tar.gz && \
     tar zxvf /root/gost.tar.gz -C /root/ && \
     mv /root/gost / && \
